@@ -1,0 +1,31 @@
+.subscribe{
+  background-color: $color__skin-light;
+  padding: 7.5rem 0px;
+
+  &__edge-left{
+    grid-column: full-start / center-start;
+  }
+
+  &__content{
+    grid-column: center-start / center-end;
+    
+    &--form{
+      display: grid;
+      grid-template-columns: auto minmax(min-content, 1fr) auto;
+      grid-column-gap: 2rem;
+
+      @media only screen and (max-width: $bp-small) {
+        grid-template-columns: minmax(min-content, 1fr);
+        grid-template-rows: repeat(3, minmax(min-content, 1fr));
+        grid-row-gap: 2rem;
+      }
+    }
+
+    @include form-inputs();
+    @include font-size(2);
+  }
+
+  &__edge-right{
+    grid-column: center-end / full-end;
+  }
+}

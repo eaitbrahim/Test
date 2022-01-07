@@ -1,0 +1,32 @@
+.site-header{
+  grid-column: full-start / full-end;
+  background: linear-gradient(
+		to right bottom,
+		rgba($color__skin, 1),
+		rgba($color__skin-dark, 1));
+  color:#fff;
+  padding: 3rem 1rem;
+
+  display: grid;
+  grid-template-columns: auto repeat(2, minmax(min-content, 1fr));
+  grid-gap: 2rem;
+  align-items: center;
+
+ &__titles{
+   display: flex;
+   flex-direction: column;
+
+   &--name{
+    font-size: 1.608rem;
+    font-weight: bold;
+   }
+
+   &--desc{
+    font-size: 1.25rem;
+    font-style: italic;
+   }
+ }
+}
+
+@import "header-menu";
+

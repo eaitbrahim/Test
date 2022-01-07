@@ -1,0 +1,18 @@
+.site{
+	display: grid;
+	grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+.site-main{
+	grid-column: center-start / center-end;
+}
+
+@import "header";
+@import "intro";
+@import "features";
+@import "services";
+@import "values";
+@import "testimonials";
+@import "message";
+@import "subscribe";
+@import "footer"; 

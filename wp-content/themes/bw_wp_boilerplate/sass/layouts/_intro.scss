@@ -1,0 +1,10 @@
+.intro{
+  grid-column: center-start / center-end;
+
+  padding: 7.5rem 0px;
+  
+  &__text{
+    color: $color__skin-dark;
+    font-size: 1.75rem;;
+  }
+} 

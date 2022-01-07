@@ -1,0 +1,21 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 2px solid;
+	border-color: $color__skin-dark;
+	background: #fff;
+	color: $color__skin;
+	font-family: $font__family;
+	@include font-size(1);
+	line-height: 1;
+	padding: .5em 1em;
+	cursor: pointer;
+	text-transform: uppercase;
+
+	&:hover ,
+	&:active,
+	&:focus {
+		color: $color__interactive;
+	}
+}

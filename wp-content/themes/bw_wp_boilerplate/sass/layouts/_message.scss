@@ -1,0 +1,67 @@
+.message{
+  background-color: $color__interactive;
+  padding: 7.5rem 0px;
+
+  &__edge-left{
+    grid-column: full-start / center-start;
+  }
+
+  &__content{
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-template-rows: repeat(3, minmax(min-content, 1fr));
+    grid-column-gap: 2rem;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: minmax(min-content, 1fr);
+      grid-template-rows: repeat(4, minmax(min-content, 1fr));
+    }
+
+    &--subhead{
+      grid-column: 1;
+      grid-row: 1;
+      padding-top: 3.75rem;
+      font-size: 1rem;
+    }
+
+    &--head{
+      grid-column: 1;
+      grid-row: 2;
+      font-size: 2rem;
+    
+    }
+    
+    &--text{
+      grid-column: 1;
+      grid-row: 3;
+      color: $color__skin;
+      font-size: 1rem;
+    }
+
+    &--btn{
+      grid-column: 2;
+      grid-row: span 3;
+      @media only screen and (max-width: $bp-small) {
+        grid-column: 1;
+        grid-row: span 4;
+      }
+      align-self: center;
+      justify-self: start;
+      background-color: $color__skin-dark;
+      color: #fff;
+      border-radius: 2rem;
+
+      &:hover{
+        background-color: #fff;
+        border-color: $color__skin-dark;
+        color: $color__skin;
+      }
+    }
+
+  }
+
+  &__edge-right{
+    grid-column: center-end / full-end;
+  }
+}

@@ -1,0 +1,164 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 20) * 1px;
+	font-size: $sizeValue * 1.25rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Piped Seperator
+@mixin piped-seperator{
+	a:after {
+		content: " | ";
+		margin: 0 10px;
+		color: $color__interactive;
+		font-weight: bold;
+	}
+	a:last-child:after {
+		content: '';
+		margin: 0 10px;
+	}
+}
+
+// Menu
+@mixin menu{
+	ul{
+		list-style-type: none;
+		margin:0;
+		padding: 0;
+	}
+
+	li{
+		display: inline;
+		align-items: center;
+		
+		a {
+			padding: .5em .5em;
+			color: white;
+			text-decoration: none;
+			
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+        color: $color__interactive;
+			}
+		}
+	}
+}
+
+// Social menu
+@mixin social_menu{
+	@include menu;
+	.icon {
+		height: 1.5rem;
+		width: 1.5rem;
+		fill: #fff;
+
+		&:hover{
+			fill: $color__interactive;
+		}
+	} 
+}
+
+// Form
+@mixin form-inputs() {
+	.label{
+		color: $color__skin;
+
+		span{
+			color: black;
+			font-size: .9rem;
+		}
+	}
+
+	.input-group {
+		position: relative;
+
+		.hidden {
+			display: none;
+		}
+		
+		.icon {
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			top: 2px; 
+			right: 5px;
+			pointer-events: none;
+			z-index: 2;
+			
+			&-success {
+				fill: green;
+			}
+			
+			&-error {
+				fill: red;
+			}
+		}
+
+		.error-message {
+			font-size: .85rem;
+			color: red;
+		}
+	}
+
+	.input{
+		appearance: none;
+		display: block;
+		width: 100%;
+		color: #2d3748;
+		border: 1px solid #cbd5e0;
+		line-height: 1.25;
+		background-color: white;
+		padding: .65rem .75rem;
+		border-radius: 0.25rem;
+		box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+		
+		&::placeholder {
+			color: #a0aec0;
+		}
+		
+		&.input-error {
+			border: 1px solid red;
+			
+			&:focus {
+				border: 1px solid red;
+			}
+		}
+		
+		&:focus {
+			outline: none;
+			border: 1px solid #a0aec0;
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+			background-clip: padding-box;
+		}
+	}
+
+	.submit-btn{
+		display: block;
+		background-color: $color__skin-dark;
+		color: #fff;
+		text-transform: uppercase;
+		
+		&:hover{
+			background-color: #fff;
+			border-color: $color__skin-dark;
+			color: $color__skin;
+		}
+	}
+
+	.success-message {
+		font-size: .85rem;
+		color: green;
+	}
+}
